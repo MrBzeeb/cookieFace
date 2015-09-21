@@ -1,17 +1,56 @@
 void EndMnu() {
-
+  
   background(0, 0, 0);
+
+  if(timer < 1) {
+  ranX = random(0, width);
+  ranY = random(0, height);
+  timer = 30;
+  }
+  
+  fill(255, 255, 255);
+  rect(ranX - 50, ranY - 50, 100, 100);
+  
+  fill(0, 0, 0);
+  ellipse(ranX - 50, ranY - 50, 100, 100);
+  
+  ellipse(ranX - 50, ranY + 50, 100, 100);  
+
+  ellipse(ranX + 50, ranY - 50, 100, 100);
+
+  ellipse(ranX + 50, ranY + 50, 100, 100);
+  timer--;
   
   //image(space, 0, 0);
   //image(worm, width * 3/12, height * 1/4);
-
-  //Draw Worm
-  tail.clear();
-  endWorm.clear();
   
-  for(int i = 0; i < endWorm.length(); i++)
+  //New Tail Segment
+  
+  Ellipse a = new Ellipse(mouseX, mouseY);
+  tail.add(a); 
+  
+
+  //Delete End Segment If At MAX
+  if (tail.size() >= MAX)
+    tail.remove(0);
+
+  //Draw Tail
+  for (Ellipse e : tail) {
+    e.draw();
+  }
+
+  //Draw Awesomeness
+  image(awesomeness, mouseX - SIZE, mouseY - SIZE);
+  
+  /*for(int i = 0; i < ENDWORM; i++){
+    int runs = 0;
+    Ellipse(endWormX.get(runs), endWormY.get(runs));
+    runs++;  
+  }*/
+  
+  /*for(int i = 0; i < endWorm.length(); i++)
   Ellipse i = new Ellipse(endWormX.get(i), endWormY.get(i))
-  endWorm.add(i);
+  endWorm.add(i);*/
 
   //Draw Scores
   textFont(Bold);

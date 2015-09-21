@@ -1,13 +1,18 @@
 final int SIZE = 70;
-final int MAX = 256;
+final int MAX = 128;
 final int GAMETIME = 30;
 final int ENDWORM = 30;
 
 final boolean ISFULLSCREEN = true;
 
+int timer = 0;
+
 float cookieX = -100;
 float cookieY = -100;
 float cookieCount = 0;
+
+float ranX = -100;
+float ranY = -100;
 
 double timeSpent = 0;
 double restMillis = 0;
@@ -21,15 +26,22 @@ PImage cookie;
 PImage space;
 PImage worm;
 
+SoundFile cookies;
+
 PFont Bold;
 
 ArrayList<Ellipse> tail;
 ArrayList<Ellipse> endWorm;
 
-int [] endWormX = new int [ENDWORM];
-int [] endWormY = new int [ENDWORM];
+int [] endWormX = {0, 20, 40, 60, 80, 100, 120, 140} ;
+int [] endWormY = {0, 20, 40, 60, 80, 100, 120, 140} ;
 
 void setup() {
+  
+  cookies = new SoundFile(this, "cookies.wav");
+
+  startMusic.play();
+
   //Set First Cookie
   cookieX = random(0, width);
   cookieY = random(100, height);

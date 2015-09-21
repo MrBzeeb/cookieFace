@@ -22,10 +22,13 @@ void PlayGame() {
     fill(200, 0, 0);
     rect(width * 7/8, 0, width * 2/8, 100);
     
+    //End GAme
     if((mousePressed == true && mouseX > (width * 7/8) && mouseX < width && mouseY < height * 1/8 && mouseY > 0)) {
       isPlay = false;
       isEnd = true;
       isStart = false;
+      
+      tail.clear();
     }
   } else {
     fill(150, 0, 0);
