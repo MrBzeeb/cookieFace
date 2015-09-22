@@ -1,3 +1,12 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+Minim minim;
+
 final int SIZE = 70;
 final int MAX = 128;
 final int GAMETIME = 30;
@@ -26,7 +35,7 @@ PImage cookie;
 PImage space;
 PImage worm;
 
-SoundFile cookies;
+AudioPlayer cookies;
 
 PFont Bold;
 
@@ -38,9 +47,9 @@ int [] endWormY = {0, 20, 40, 60, 80, 100, 120, 140} ;
 
 void setup() {
   
-  cookies = new SoundFile(this, "cookies.wav");
-
-  startMusic.play();
+  minim = new Minim(this);
+  
+  cookies = minim.loadFile("cookies.wav");
 
   //Set First Cookie
   cookieX = random(0, width);
