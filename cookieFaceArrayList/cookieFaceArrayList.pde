@@ -15,6 +15,7 @@ final int ENDWORM = 30;
 final boolean ISFULLSCREEN = true;
 
 int timer = 0;
+int timer2 = 0;
 
 float cookieX = -100;
 float cookieY = -100;
@@ -22,6 +23,9 @@ float cookieCount = 0;
 
 float ranX = -100;
 float ranY = -100;
+
+float ranX2 = -100;
+float ranY2 = -100;
 
 double timeSpent = 0;
 double restMillis = 0;
@@ -38,6 +42,7 @@ PImage worm;
 AudioPlayer cookies;
 
 PFont Bold;
+PFont SuperBold;
 
 ArrayList<Ellipse> tail;
 ArrayList<Ellipse> endWorm;
@@ -69,6 +74,7 @@ void setup() {
 
   //Load Font
   Bold = createFont("Arial Bold", 50);
+  SuperBold = createFont("Arial Bold", 100);
 
   //Load Images
   worm = loadImage("SPACEWORM.png");

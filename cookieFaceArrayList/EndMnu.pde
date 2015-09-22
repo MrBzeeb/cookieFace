@@ -5,7 +5,7 @@ void EndMnu() {
   if(timer < 1) {
   ranX = random(0, width);
   ranY = random(0, height);
-  timer = 30;
+  timer = 60;
   }
   
   fill(255, 255, 255);
@@ -20,6 +20,25 @@ void EndMnu() {
 
   ellipse(ranX + 50, ranY + 50, 100, 100);
   timer--;
+  
+  if(timer2 < 1) {
+  ranX2 = random(0, width);
+  ranY2 = random(0, height);
+  timer2 = 60;
+  }
+  
+  fill(255, 255, 255);
+  rect(ranX2 - 50, ranY2 - 50, 100, 100);
+  
+  fill(0, 0, 0);
+  ellipse(ranX2 - 50, ranY2 - 50, 100, 100);
+  
+  ellipse(ranX2 - 50, ranY2 + 50, 100, 100);  
+
+  ellipse(ranX2 + 50, ranY2 - 50, 100, 100);
+
+  ellipse(ranX2 + 50, ranY2 + 50, 100, 100);
+  timer2--;
   
   //image(space, 0, 0);
   //image(worm, width * 3/12, height * 1/4);

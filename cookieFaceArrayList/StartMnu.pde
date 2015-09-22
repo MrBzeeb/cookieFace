@@ -16,4 +16,8 @@ void StartMnu() {
     isPlay = true;
     isEnd = false;
   }
+  
+  fill(0, 0, 0);
+  textFont(SuperBold);
+  text("START", width * 4/10, height * 9/12);
 }
