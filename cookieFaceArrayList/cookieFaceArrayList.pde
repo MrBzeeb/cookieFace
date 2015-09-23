@@ -15,6 +15,8 @@ final int ENDWORM = 30;
 final boolean ISFULLSCREEN = true;
 
 int timer = 0;
+int timer2 = 10;
+int timer3 = 20;
 
 float cookieX = -100;
 float cookieY = -100;
@@ -22,6 +24,12 @@ float cookieCount = 0;
 
 float ranX = -100;
 float ranY = -100;
+
+float ranX2 = -100;
+float ranY2 = -100;
+
+float ranX3 = -100;
+float ranY3 = -100;
 
 double timeSpent = 0;
 double restMillis = 0;
