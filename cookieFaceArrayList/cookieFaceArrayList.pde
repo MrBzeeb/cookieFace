@@ -38,6 +38,8 @@ boolean isPlay = false;
 boolean isStart = true;
 boolean isEnd = false;
 
+boolean earlyEnd = false;
+
 PImage awesomeness;
 PImage cookie;
 PImage space;
@@ -48,7 +50,6 @@ AudioPlayer cookies;
 PFont Bold;
 
 ArrayList<Ellipse> tail;
-ArrayList<Ellipse> endWorm;
 
 int [] endWormX = {0, 20, 40, 60, 80, 100, 120, 140} ;
 int [] endWormY = {0, 20, 40, 60, 80, 100, 120, 140} ;
@@ -73,7 +74,6 @@ void setup() {
 
   //Set ArrayList
   tail = new ArrayList<Ellipse>();
-  endWorm = new ArrayList<Ellipse>();
 
   //Load Font
   Bold = createFont("Arial Bold", 50);

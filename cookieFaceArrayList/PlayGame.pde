@@ -30,6 +30,8 @@ void PlayGame() {
       isEnd = true;
       isStart = false;
       
+      earlyEnd = true;
+      
       tail.clear();
     }
   } else {

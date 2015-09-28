@@ -47,9 +47,9 @@ void EndMnu() {
   }
   
   fill(255, 255, 255);
-  rect(ranX3 - 50, ranY - 50, 100, 100);
+  rect(ranX3 - 50, ranY3 - 50, 100, 100);
   
-  fill(255, 0, 0);
+  fill(0, 0, 0);
   ellipse(ranX3 - 50, ranY3 - 50, 100, 100);
   
   ellipse(ranX3 - 50, ranY3 + 50, 100, 100);  
@@ -79,23 +79,17 @@ void EndMnu() {
 
   //Draw Awesomeness
   image(awesomeness, mouseX - SIZE, mouseY - SIZE);
-  
-  /*for(int i = 0; i < ENDWORM; i++){
-    int runs = 0;
-    Ellipse(endWormX.get(runs), endWormY.get(runs));
-    runs++;  
-  }*/
-  
-  /*for(int i = 0; i < endWorm.length(); i++)
-  Ellipse i = new Ellipse(endWormX.get(i), endWormY.get(i))
-  endWorm.add(i);*/
 
   //Draw Scores
   textFont(Bold);
   fill(0, 200, 0);
   text("You Scored " + (int)cookieCount + " Cookies!", width * 1/4, height * 1/5);
 
-  text("Efficiency of " + (int)(cookieCount / 30) + " cookies per second!", width * 1/7, height * 2/5);
+  if(earlyEnd == true) {
+    
+  } else {
+    text("Efficiency of " + (cookieCount / GAMETIME) + " cookies per second!", width * 1/7, height * 2/5);
+  }
 
   //Draw Restart
   if(mouseX > width * 1/8 && mouseX < width * 7/8 && mouseY > height * 4/6 && mouseY < height * 5/6){
@@ -109,6 +103,8 @@ void EndMnu() {
       isPlay = true;
       isEnd = false;
       isStart = false;
+      
+      cookieCount = 0;
       
       tail.clear();
       
