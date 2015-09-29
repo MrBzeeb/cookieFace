@@ -18,6 +18,8 @@ int timer = 0;
 int timer2 = 10;
 int timer3 = 20;
 
+int avgScore = 0;
+
 float cookieX = -100;
 float cookieY = -100;
 float cookieCount = 0;

@@ -85,11 +85,9 @@ void EndMnu() {
   fill(0, 200, 0);
   text("You Scored " + (int)cookieCount + " Cookies!", width * 1/4, height * 1/5);
 
-  if(earlyEnd == true) {
-    
-  } else {
+  avgScore = (int)(cookieCount / GAMETIME);
+  
     text("Efficiency of " + (cookieCount / GAMETIME) + " cookies per second!", width * 1/7, height * 2/5);
-  }
 
   //Draw Restart
   if(mouseX > width * 1/8 && mouseX < width * 7/8 && mouseY > height * 4/6 && mouseY < height * 5/6){
