@@ -71,6 +71,7 @@ void setup() {
   //Set Box Properties
   size(1024, 768);
 
+  noCursor();
   noStroke();
   smooth();
 
