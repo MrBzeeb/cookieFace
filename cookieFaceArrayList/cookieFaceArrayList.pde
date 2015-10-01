@@ -8,15 +8,15 @@ import ddf.minim.ugens.*;
 Minim minim;
 
 final int SIZE = 70;
-final int MAX = 128;
+final int MAX = 256;
 final int GAMETIME = 30;
 final int ENDWORM = 30;
 
 final boolean ISFULLSCREEN = true;
 
 int timer = 0;
-int timer2 = 10;
-int timer3 = 20;
+int timer2 = 33;
+int timer3 = 66;
 
 int avgScore = 0;
 
@@ -57,9 +57,9 @@ int [] endWormX = {0, 20, 40, 60, 80, 100, 120, 140} ;
 int [] endWormY = {0, 20, 40, 60, 80, 100, 120, 140} ;
 
 void setup() {
-  
+
   minim = new Minim(this);
-  
+
   cookies = minim.loadFile("cookies.wav");
 
   //Set First Cookie
@@ -70,6 +70,7 @@ void setup() {
 
   //Set Box Properties
   size(1024, 768);
+  frameRate(1000);
 
   noCursor();
   noStroke();

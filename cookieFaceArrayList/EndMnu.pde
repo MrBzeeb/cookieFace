@@ -5,7 +5,7 @@ void EndMnu() {
   if(timer < 1) {
   ranX = random(0, width);
   ranY = random(0, height);
-  timer = 30;
+  timer = 100;
   }
   
   fill(255, 255, 255);
@@ -24,7 +24,7 @@ void EndMnu() {
   if(timer2 < 1) {
   ranX2 = random(0, width);
   ranY2 = random(0, height);
-  timer2 = 30;
+  timer2 = 100;
   }
   
   fill(255, 255, 255);
@@ -43,7 +43,7 @@ void EndMnu() {
   if(timer3 < 1) {
   ranX3 = random(0, width);
   ranY3 = random(0, height);
-  timer3 = 30;
+  timer3 = 100;
   }
   
   fill(255, 255, 255);
