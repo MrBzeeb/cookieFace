@@ -3,6 +3,7 @@ void PlayGame() {
   //If Touching Cookie
   if (abs(mouseX - cookieX) < 50 && abs(mouseY - cookieY) < 50) {
     cookies.rewind();
+    cookies.position();
     cookies.play();
     cookieX = random(0, width);
     cookieY = random(100, height);
@@ -29,8 +30,6 @@ void PlayGame() {
       isPlay = false;
       isEnd = true;
       isStart = false;
-      
-      earlyEnd = true;
       
       tail.clear();
     }

@@ -5,7 +5,7 @@ void EndMnu() {
   if(timer < 1) {
   ranX = random(0, width);
   ranY = random(0, height);
-  timer = 100;
+  timer = 30;
   }
   
   fill(255, 255, 255);
@@ -20,44 +20,6 @@ void EndMnu() {
 
   ellipse(ranX + 50, ranY + 50, 100, 100);
   timer--;
-  
-  if(timer2 < 1) {
-  ranX2 = random(0, width);
-  ranY2 = random(0, height);
-  timer2 = 100;
-  }
-  
-  fill(255, 255, 255);
-  rect(ranX2 - 50, ranY2 - 50, 100, 100);
-  
-  fill(0, 0, 0);
-  ellipse(ranX2 - 50, ranY2 - 50, 100, 100);
-  
-  ellipse(ranX2 - 50, ranY2 + 50, 100, 100);  
-
-  ellipse(ranX2 + 50, ranY2 - 50, 100, 100);
-
-  ellipse(ranX2 + 50, ranY2 + 50, 100, 100);
-  timer2--;
-  
-  if(timer3 < 1) {
-  ranX3 = random(0, width);
-  ranY3 = random(0, height);
-  timer3 = 100;
-  }
-  
-  fill(255, 255, 255);
-  rect(ranX3 - 50, ranY3 - 50, 100, 100);
-  
-  fill(0, 0, 0);
-  ellipse(ranX3 - 50, ranY3 - 50, 100, 100);
-  
-  ellipse(ranX3 - 50, ranY3 + 50, 100, 100);  
-
-  ellipse(ranX3 + 50, ranY3 - 50, 100, 100);
-
-  ellipse(ranX3 + 50, ranY3 + 50, 100, 100);
-  timer3--;
   
   //image(space, 0, 0);
   //image(worm, width * 3/12, height * 1/4);
@@ -79,15 +41,23 @@ void EndMnu() {
 
   //Draw Awesomeness
   image(awesomeness, mouseX - SIZE, mouseY - SIZE);
+  
+  /*for(int i = 0; i < ENDWORM; i++){
+    int runs = 0;
+    Ellipse(endWormX.get(runs), endWormY.get(runs));
+    runs++;  
+  }*/
+  
+  /*for(int i = 0; i < endWorm.length(); i++)
+  Ellipse i = new Ellipse(endWormX.get(i), endWormY.get(i))
+  endWorm.add(i);*/
 
   //Draw Scores
   textFont(Bold);
   fill(0, 200, 0);
   text("You Scored " + (int)cookieCount + " Cookies!", width * 1/4, height * 1/5);
 
-  avgScore = (int)(cookieCount / GAMETIME);
-  
-    text("Efficiency of " + (cookieCount / GAMETIME) + " cookies per second!", width * 1/7, height * 2/5);
+  text("Efficiency of " + (int)(cookieCount / 30) + " cookies per second!", width * 1/7, height * 2/5);
 
   //Draw Restart
   if(mouseX > width * 1/8 && mouseX < width * 7/8 && mouseY > height * 4/6 && mouseY < height * 5/6){
@@ -101,8 +71,6 @@ void EndMnu() {
       isPlay = true;
       isEnd = false;
       isStart = false;
-      
-      cookieCount = 0;
       
       tail.clear();
       

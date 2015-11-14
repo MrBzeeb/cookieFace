@@ -7,18 +7,16 @@ import ddf.minim.ugens.*;
 
 Minim minim;
 
+AudioPlayer cookies;
+
 final int SIZE = 70;
-final int MAX = 256;
+final int MAX = 128;
 final int GAMETIME = 30;
 final int ENDWORM = 30;
 
 final boolean ISFULLSCREEN = true;
 
 int timer = 0;
-int timer2 = 33;
-int timer3 = 66;
-
-int avgScore = 0;
 
 float cookieX = -100;
 float cookieY = -100;
@@ -27,12 +25,6 @@ float cookieCount = 0;
 float ranX = -100;
 float ranY = -100;
 
-float ranX2 = -100;
-float ranY2 = -100;
-
-float ranX3 = -100;
-float ranY3 = -100;
-
 double timeSpent = 0;
 double restMillis = 0;
 
@@ -40,26 +32,22 @@ boolean isPlay = false;
 boolean isStart = true;
 boolean isEnd = false;
 
-boolean earlyEnd = false;
-
 PImage awesomeness;
 PImage cookie;
 PImage space;
 PImage worm;
 
-AudioPlayer cookies;
-
 PFont Bold;
 
 ArrayList<Ellipse> tail;
+ArrayList<Ellipse> endWorm;
 
 int [] endWormX = {0, 20, 40, 60, 80, 100, 120, 140} ;
 int [] endWormY = {0, 20, 40, 60, 80, 100, 120, 140} ;
 
 void setup() {
-
+  
   minim = new Minim(this);
-
   cookies = minim.loadFile("cookies.wav");
 
   //Set First Cookie
@@ -70,14 +58,13 @@ void setup() {
 
   //Set Box Properties
   size(1024, 768);
-  frameRate(1000);
 
-  noCursor();
   noStroke();
   smooth();
 
   //Set ArrayList
   tail = new ArrayList<Ellipse>();
+  endWorm = new ArrayList<Ellipse>();
 
   //Load Font
   Bold = createFont("Arial Bold", 50);
